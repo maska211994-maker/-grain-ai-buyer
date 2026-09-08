@@ -1,0 +1,479 @@
+from dataclasses import dataclass
+from typing import Dict, Tuple, List, Optional
+from math import radians, sin, cos, asin, sqrt
+import json
+from pathlib import Path
+
+# ============================================================
+# GRAIN ENGINE V3.4
+# ЭТАП 3 — быстрый расчёт цены фермеру БЕЗ цены фермера
+#
+# Сценарий:
+# Фермер: "Хмельницкая обл., Грим'ячка, 100 т сои, показатели в базе"
+# -> движок определяет направления -> считает логистику ->
+# -> вычитает нашу маржу -> выдаёт цену НА МЕСТЕ у фермера.
+#
+# ВАЖНО:
+# - текущие цены рынка живут отдельно от логики движка;
+# - расстояния пока считаются через координаты + коэффициент дороги;
+# - следующим этапом подключим точный дорожный маршрут/геокодер.
+# ============================================================
+
+DATE = "08.09.2026"
+USD_BUY = 44.60
+USD_SELL = 44.80
+USD_RATE = (USD_BUY + USD_SELL) / 2
+
+MARGINS = {
+    "кукуруза": (300, 300),
+    "пшеница": (300, 300),
+    "ячмень": (300, 300),
+    "рапс": (400, 500),
+    "подсолнечник": (400, 500),
+    "семечка": (400, 500),
+    "соя": (400, 500),
+    "горох": (300, 400),
+}
+
+# Актуальный прайс на 08.09.2026.
+PRICES = {
+    "кукуруза": {
+        "Луцк": (6000, "грн"), "Полтава": (5000, "грн"), "Измаил": (6500, "грн")},
+    "пшеница": {
+        "Львов": (5700, "грн"), "Киевская обл.": (5200, "грн"),
+        "Рени": (6500, "грн"), "Измаил": (6500, "грн")},
+    "ячмень": {"Измаил": (5550, "грн")},
+    "подсолнечник": {
+        "УЧІ": (14200, "грн"), "Бандурка ОЕЗ": (13700, "грн"),
+        "Кропивницкий ОЕЗ": (14500, "грн"), "Полтава ОЕЗ": (14500, "грн"),
+        "Старкон ОЕЗ": (14700, "грн"), "Голованевск": (14100, "грн"),
+        "Измаил": (353, "$"), "Баштанка": (330, "$"),
+        "Новый Буг": (328, "$"), "Софиевка (Ник. обл.)": (328, "$")},
+    "соя": {
+        "Кропивницкий": (11200, "грн"), "Чорнобаи, Черкасская обл.": (10700, "грн"),
+        "Киевская обл.": (300, "$"), "Луцк": (13000, "грн")},
+    "рапс": {
+        "Новая Одесса": (360, "$"), "Новотех": (400, "$"),
+        "Киевская обл.": (15800, "грн"), "Рени": (17700, "грн"),
+        "Одесса": (360, "$"), "Константиновка": (365, "$")},
+    "горох": {"Одесса": (124, "$")},
+}
+
+LOGISTICS = [
+    (10, 50, 200, 300), (50, 100, 300, 550), (100, 150, 500, 700),
+    (150, 200, 700, 850), (200, 250, 850, 1050), (250, 300, 1050, 1200),
+    (300, 350, 1200, 1350), (350, 400, 1350, 1500), (400, 450, 1500, 1500),
+    (450, 500, 1500, 1600), (500, 550, 1600, 1650), (550, 600, 1600, 1750),
+    (600, 650, 1750, 1800), (650, 700, 1750, 1850), (700, 750, 1850, 1875),
+    (750, 800, 1850, 1900), (800, 900, 2000, 2100),
+]
+
+# Координаты населённых пунктов/направлений.
+# Пока используем центр населённого пункта. Для заводов позже внесём
+# координаты конкретной точки приёмки.
+LOCATIONS = {
+    "Грим'ячка, Хмельницкая обл.": (49.14083, 27.10167),
+    "Гримячка, Хмельницкая обл.": (49.14083, 27.10167),
+    "Грим'ячка": (49.14083, 27.10167),
+    "Кропивницкий": (48.5106, 32.2656),
+    "Чорнобаи, Черкасская обл.": (49.67037, 32.32336),
+    "Киевская обл.": (50.38125, 30.52662),
+    "Луцк": (50.74778, 25.32444),
+    "Одесса": (46.4825, 30.7233),
+    "Рени": (45.457, 28.284),
+    "Измаил": (45.3493, 28.8408),
+    "Львов": (49.8397, 24.0297),
+    "Полтава": (49.5883, 34.5514),
+    "Новая Одесса": (47.3078, 31.7851),
+    "Баштанка": (47.406, 32.442),
+    "Новый Буг": (47.683, 32.504),
+    "Константиновка": (47.823, 30.715),
+}
+
+# До появления точного дорожного API используем поправку от прямого
+# расстояния к ориентировочному дорожному расстоянию.
+ROAD_FACTOR = 1.20
+
+@dataclass
+class FarmerRequest:
+    crop: str
+    origin: str
+    volume_t: float
+    quality: str = "в базе"
+
+@dataclass
+class QuoteOption:
+    destination: str
+    distance_km: float
+    distance_type: str
+    market_price_uah: float
+    logistics_mid: float
+    margin: float
+    farmer_price: float
+
+@dataclass
+class FarmerQuote:
+    crop: str
+    origin: str
+    volume_t: float
+    quality: str
+    recommended_price: float
+    maximum_price: float
+    best_destination: str
+    logistics_mid: float
+    margin: float
+    distance_km: float
+    distance_type: str
+    alternatives: List[QuoteOption]
+
+# ============================================================
+# V3.5 — AI-INPUT: разбор свободной речи фермера
+# ============================================================
+
+CROP_ALIASES = {
+    "соя": "соя", "сої": "соя",
+    "рапс": "рапс", "рапсу": "рапс", "ріпак": "рапс", "ріпаку": "рапс",
+    "кукуруза": "кукуруза", "кукурудза": "кукуруза",
+    "пшеница": "пшеница", "пшеницу": "пшеница", "пшениці": "пшеница",
+    "ячмень": "ячмень", "ячмінь": "ячмень",
+    "подсолнечник": "подсолнечник", "соняшник": "подсолнечник",
+    "горох": "горох", "гороха": "горох", "гороху": "горох",
+}
+
+@dataclass
+class ParsedFarmerRequest:
+    crop: str
+    origin_text: str
+    volume_t: float
+    quality: str = "в базе"
+    confidence: float = 1.0
+
+def _extract_volume(text: str) -> Optional[float]:
+    patterns = [
+        r'(\d+(?:[.,]\d+)?)\s*(?:т|тонн|тонны|тон|тн)\b',
+        r'(\d+(?:[.,]\d+)?)\s*(?:т\.?)\b',
+    ]
+    for pattern in patterns:
+        m = re.search(pattern, text, re.IGNORECASE)
+        if m:
+            return float(m.group(1).replace(",", "."))
+    return None
+
+def _extract_crop(text: str) -> Optional[str]:
+    low = text.lower()
+    for alias, crop in sorted(CROP_ALIASES.items(), key=lambda x: len(x[0]), reverse=True):
+        if re.search(rf'\b{re.escape(alias)}\b', low):
+            return crop
+    return None
+
+def parse_farmer_speech(text: str) -> ParsedFarmerRequest:
+    """
+    Разбирает обычную фразу фермера.
+    Пример:
+    'Хмельницкая область, село Гримячка, есть 100 тонн сои,
+     показатели в базе'
+    """
+    crop = _extract_crop(text)
+    volume = _extract_volume(text)
+
+    if not crop:
+        raise ValueError("Не удалось определить культуру из фразы.")
+    if volume is None:
+        raise ValueError("Не удалось определить объём в тоннах.")
+
+    # Извлекаем локацию между областью/селом и объёмом.
+    loc_patterns = [
+        r'(?:(?:в|с|из)\s+)?(?:село|с\.|смт|пгт)\s+([^,.;]+)',
+        r'((?:Хмельницкая|Хмельницкая\s+обл\.?|Хмельницкая\s+область)[^,.;]*)',
+        r'((?:Киевская|Винницкая|Одесская|Черкасская|Полтавская|Николаевская|Львовская|Волынская)\s+(?:обл\.?|область)[^,.;]*)',
+    ]
+
+    origin = None
+    for pattern in loc_patterns:
+        m = re.search(pattern, text, re.IGNORECASE)
+        if m:
+            origin = m.group(1).strip()
+            break
+
+    if not origin:
+        raise ValueError("Не удалось определить населённый пункт/локацию.")
+
+    # Нормализуем частые формы: область + село.
+    village = re.search(r'(?:село|с\.|смт|пгт)\s+([^,.;]+)', text, re.IGNORECASE)
+    oblast = re.search(
+        r'([А-Яа-яІіЇїЄєҐґ\'’-]+)\s+(?:обл\.?|область)',
+        text, re.IGNORECASE
+    )
+    if village and oblast:
+        origin = f"{village.group(1).strip()}, {oblast.group(1).strip()} обл."
+
+    quality = "в базе" if re.search(r'показател\w*\s+в\s+базе|показники\s+в\s+базі', text, re.IGNORECASE) else "требует уточнения"
+
+    return ParsedFarmerRequest(
+        crop=crop,
+        origin_text=origin,
+        volume_t=volume,
+        quality=quality,
+        confidence=0.95,
+    )
+
+
+def price_to_uah(value: float, currency: str, usd_rate: float = USD_RATE) -> float:
+    currency = currency.strip().upper()
+    if currency in ("$", "USD"):
+        return value * usd_rate
+    if currency in ("ГРН", "UAH"):
+        return value
+    raise ValueError(f"Неизвестная валюта: {currency}")
+
+
+def logistics_range(distance_km: float) -> Tuple[float, float]:
+    if distance_km < 10:
+        return 0.0, 0.0
+    for low, high, cost_low, cost_high in LOGISTICS:
+        if low <= distance_km <= high:
+            return float(cost_low), float(cost_high)
+    raise ValueError(f"Расстояние {distance_km:.0f} км вне таблицы логистики 10–900 км.")
+
+
+def haversine_km(a: Tuple[float, float], b: Tuple[float, float]) -> float:
+    lat1, lon1 = map(radians, a)
+    lat2, lon2 = map(radians, b)
+    dlat, dlon = lat2 - lat1, lon2 - lon1
+    h = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    return 6371.0 * 2 * asin(sqrt(h))
+
+
+def resolve_location(name: str) -> Tuple[float, float]:
+    key = name.strip()
+    if key in LOCATIONS:
+        return LOCATIONS[key]
+    # Простое сопоставление по нижнему регистру для будущих вариантов написания.
+    low = key.lower()
+    for known, coords in LOCATIONS.items():
+        if known.lower() in low or low in known.lower():
+            return coords
+    raise ValueError(f"Населённый пункт '{name}' пока отсутствует в базе координат.")
+
+
+def distance_to_destination(origin: str, destination: str) -> Tuple[float, str]:
+    origin_xy = resolve_location(origin)
+    destination_xy = resolve_location(destination)
+    straight = haversine_km(origin_xy, destination_xy)
+    road = straight * ROAD_FACTOR
+    return round(road, 1), "оценка по координатам"
+
+
+def margin_range(crop: str) -> Tuple[float, float]:
+    key = crop.strip().lower()
+    if key not in MARGINS:
+        raise ValueError(f"Маржа для культуры '{crop}' пока не задана.")
+    return MARGINS[key]
+
+
+def calculate_quote(request: FarmerRequest, usd_rate: float = USD_RATE) -> FarmerQuote:
+    crop = request.crop.strip().lower()
+    if request.volume_t <= 0:
+        raise ValueError("Объём должен быть больше 0 т.")
+    if crop not in PRICES:
+        raise ValueError(f"Культура '{request.crop}' отсутствует в актуальном прайсе.")
+
+    margin_low, margin_high = margin_range(crop)
+    options: List[QuoteOption] = []
+
+    for destination, (raw_price, currency) in PRICES[crop].items():
+        try:
+            distance, distance_type = distance_to_destination(request.origin, destination)
+            market = price_to_uah(raw_price, currency, usd_rate)
+            log_low, log_high = logistics_range(distance)
+            log_mid = (log_low + log_high) / 2
+
+            # Рекомендуемая цена: оставляем верхнюю границу нашей маржи.
+            farmer_price = market - log_mid - margin_high
+            # Максимум: минимальная допустимая маржа.
+            maximum_price = market - log_mid - margin_low
+
+            if farmer_price > 0:
+                options.append(QuoteOption(
+                    destination=destination,
+                    distance_km=distance,
+                    distance_type=distance_type,
+                    market_price_uah=market,
+                    logistics_mid=log_mid,
+                    margin=margin_high,
+                    farmer_price=farmer_price,
+                ))
+        except (ValueError, KeyError):
+            # Направления без координат пока пропускаем, не ломая весь расчёт.
+            continue
+
+    if not options:
+        raise ValueError(
+            f"Не удалось рассчитать ни одного направления для '{request.origin}'. "
+            "Добавьте населённый пункт/координаты направления."
+        )
+
+    options.sort(key=lambda x: x.farmer_price, reverse=True)
+    best = options[0]
+    max_price = best.market_price_uah - best.logistics_mid - margin_low
+
+    return FarmerQuote(
+        crop=request.crop,
+        origin=request.origin,
+        volume_t=request.volume_t,
+        quality=request.quality,
+        recommended_price=round(best.farmer_price),
+        maximum_price=round(max_price),
+        best_destination=best.destination,
+        logistics_mid=round(best.logistics_mid),
+        margin=round(best.margin),
+        distance_km=best.distance_km,
+        distance_type=best.distance_type,
+        alternatives=options,
+    )
+
+
+def print_quote(quote: FarmerQuote) -> None:
+    print("\n" + "=" * 64)
+    print("GRAIN ENGINE V3.4 — БЫСТРАЯ ЦЕНА ФЕРМЕРУ")
+    print("=" * 64)
+    print(f"Культура:          {quote.crop}")
+    print(f"Откуда:            {quote.origin}")
+    print(f"Объём:             {quote.volume_t:.0f} т")
+    print(f"Качество:          {quote.quality}")
+    print("-" * 64)
+    print(f"🎯 ЦЕНА ФЕРМЕРУ:   {quote.recommended_price:.0f} грн/т")
+    print(f"🔴 МАКСИМУМ:       {quote.maximum_price:.0f} грн/т")
+    print(f"📍 Направление:    {quote.best_destination}")
+    print(f"🚛 Логистика:      ~{quote.logistics_mid:.0f} грн/т")
+    print(f"💰 Маржа:          {quote.margin:.0f} грн/т")
+    print(f"📏 Расстояние:     ~{quote.distance_km:.0f} км ({quote.distance_type})")
+    print("-" * 64)
+    print("Альтернативы:")
+    for option in quote.alternatives[:5]:
+        print(
+            f"• {option.destination}: {option.farmer_price:.0f} грн/т "
+            f"| ~{option.distance_km:.0f} км | лог. ~{option.logistics_mid:.0f}"
+        )
+    print("=" * 64)
+
+
+# ============================================================
+# V3.6 — AUTO GEOLOCATION
+# ============================================================
+# Новое село не требует ручного добавления.
+# Система сначала смотрит локальный кэш, затем может передать
+# нормализованное название внешнему геокодеру. Сам HTTP-вызов
+# намеренно отделён от движка: его подключим следующим этапом.
+# ============================================================
+
+LOCATION_CACHE_FILE = "locations_cache.json"
+
+def normalize_location_name(origin_text: str) -> str:
+    """Приводит название локации к стабильному виду для поиска/кэша."""
+    value = re.sub(r"\s+", " ", origin_text.strip())
+    value = value.replace("обл,", "обл.").replace("область,", "обл.")
+    return value
+
+def load_location_cache(path: str = LOCATION_CACHE_FILE) -> Dict[str, dict]:
+    p = Path(path)
+    if not p.exists():
+        return {}
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+def save_location_cache(cache: Dict[str, dict], path: str = LOCATION_CACHE_FILE) -> None:
+    Path(path).write_text(
+        json.dumps(cache, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+def get_cached_location(origin_text: str, path: str = LOCATION_CACHE_FILE) -> Optional[dict]:
+    key = normalize_location_name(origin_text).lower()
+    return load_location_cache(path).get(key)
+
+def cache_location(
+    origin_text: str,
+    latitude: float,
+    longitude: float,
+    display_name: str = "",
+    path: str = LOCATION_CACHE_FILE,
+) -> dict:
+    cache = load_location_cache(path)
+    key = normalize_location_name(origin_text).lower()
+    cache[key] = {
+        "query": normalize_location_name(origin_text),
+        "display_name": display_name or normalize_location_name(origin_text),
+        "latitude": latitude,
+        "longitude": longitude,
+    }
+    save_location_cache(cache, path)
+    return cache[key]
+
+def prepare_geocoding_request(origin_text: str) -> dict:
+    """
+    Готовит запрос для внешнего геокодера.
+    Внешний сервис подключается отдельно, чтобы API-ключи и лимиты
+    не были зашиты в закупочный движок.
+    """
+    location = normalize_location_name(origin_text)
+    return {
+        "query": f"{location}, Украина",
+        "country": "UA",
+        "language": "ru",
+    }
+
+def resolve_location(origin_text: str) -> dict:
+    """
+    1) Проверяет кэш.
+    2) Если записи нет — возвращает подготовленный запрос геокодеру.
+    """
+    cached = get_cached_location(origin_text)
+    if cached:
+        return {
+            "status": "cached",
+            **cached,
+        }
+
+    return {
+        "status": "needs_geocoding",
+        **prepare_geocoding_request(origin_text),
+    }
+
+
+if __name__ == "__main__":
+    farmer_phrase = (
+        "Хмельницкая область, село Гримячка, есть 100 тонн сои, "
+        "показатели в базе"
+    )
+
+    parsed = parse_farmer_speech(farmer_phrase)
+
+    # Сейчас используем известную нам запись Гримячки.
+    # В следующей версии этот шаг будет автоматически делать геокодер,
+    # если населённого пункта нет в LOCATIONS.
+    normalized_origin = parsed.origin_text
+    if normalized_origin.lower() in {
+        "гримячка, хмельницкая обл.",
+        "грим'ячка, хмельницкая обл.",
+    }:
+        normalized_origin = "Грим'ячка, Хмельницкая обл."
+
+    # Проверяем геолокацию: если село уже известно — берём из кэша;
+    # если новое — формируем запрос для геокодера.
+    location = resolve_location(normalized_origin)
+    print("\nГЕОЛОКАЦИЯ:")
+    print(location)
+
+    request = FarmerRequest(
+        crop=parsed.crop,
+        origin=normalized_origin,
+        volume_t=parsed.volume_t,
+        quality=parsed.quality,
+    )
+
+    quote = calculate_quote(request)
+    print_quote(quote)

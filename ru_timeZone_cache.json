@@ -1,0 +1,1190 @@
+[
+  {
+    "areaDescEn" : "InternationalDateLineWest",
+    "timeZone" : 32,
+    "timeZoneDesc" : "GMT-12:00",
+    "timeZoneId" : "Etc\/GMT+12",
+    "areaIndex" : 1,
+    "areaDesc" : "(UTC-12:00) Линия перемены даты",
+    "offsetDesc" : "(UTC-12:00)"
+  },
+  {
+    "areaDescEn" : "UTC-11",
+    "timeZone" : 31,
+    "timeZoneDesc" : "GMT-11:00",
+    "timeZoneId" : "Etc\/GMT+11",
+    "areaIndex" : 2,
+    "areaDesc" : "(UTC-11:00) UTC-11",
+    "offsetDesc" : "(UTC-11:00)"
+  },
+  {
+    "areaDescEn" : "Hawaii",
+    "timeZone" : 30,
+    "timeZoneDesc" : "GMT-10:00",
+    "timeZoneId" : "Pacific\/Honolulu",
+    "areaIndex" : 3,
+    "areaDesc" : "(UTC-10:00) Гавайи",
+    "offsetDesc" : "(UTC-10:00)"
+  },
+  {
+    "areaDescEn" : "Alaska",
+    "timeZone" : 29,
+    "timeZoneDesc" : "GMT-09:00",
+    "timeZoneId" : "America\/Anchorage",
+    "areaIndex" : 4,
+    "areaDesc" : "(UTC-09:00) Аляска",
+    "offsetDesc" : "(UTC-09:00)"
+  },
+  {
+    "areaDescEn" : "Pacifictime",
+    "timeZone" : 28,
+    "timeZoneDesc" : "GMT-08:00",
+    "timeZoneId" : "America\/Los_Angeles",
+    "areaIndex" : 5,
+    "areaDesc" : "(UTC-08:00) Тихоокеанское время (США и Канада)",
+    "offsetDesc" : "(UTC-08:00)"
+  },
+  {
+    "areaDescEn" : "LowerCalifornia",
+    "timeZone" : 28,
+    "timeZoneDesc" : "GMT-08:00",
+    "timeZoneId" : "America\/Tijuana",
+    "areaIndex" : 6,
+    "areaDesc" : "(UTC-08:00) Нижняя Калифорния",
+    "offsetDesc" : "(UTC-08:00)"
+  },
+  {
+    "areaDescEn" : "Chihuahua",
+    "timeZone" : 27,
+    "timeZoneDesc" : "GMT-07:00",
+    "timeZoneId" : "America\/Chihuahua",
+    "areaIndex" : 7,
+    "areaDesc" : "(UTC-07:00) Чиуауа, Ла-Пас, Масатлан",
+    "offsetDesc" : "(UTC-07:00)"
+  },
+  {
+    "areaDescEn" : "Mountaintime",
+    "timeZone" : 27,
+    "timeZoneDesc" : "GMT-07:00",
+    "timeZoneId" : "America\/Denver",
+    "areaIndex" : 8,
+    "areaDesc" : "(UTC-07:00) Зона зимнего времени (США и Канада)",
+    "offsetDesc" : "(UTC-07:00)"
+  },
+  {
+    "areaDescEn" : "Arizona",
+    "timeZone" : 27,
+    "timeZoneDesc" : "GMT-07:00",
+    "timeZoneId" : "America\/Phoenix",
+    "areaIndex" : 9,
+    "areaDesc" : "(UTC-07:00) Аризона",
+    "offsetDesc" : "(UTC-07:00)"
+  },
+  {
+    "areaDescEn" : "Guadalajara",
+    "timeZone" : 26,
+    "timeZoneDesc" : "GMT-06:00",
+    "timeZoneId" : "America\/Mexico_City",
+    "areaIndex" : 10,
+    "areaDesc" : "(UTC-06:00) Гвадалахара, Мехико, Монтеррей",
+    "offsetDesc" : "(UTC-06:00)"
+  },
+  {
+    "areaDescEn" : "Saskatchewan",
+    "timeZone" : 26,
+    "timeZoneDesc" : "GMT-06:00",
+    "timeZoneId" : "America\/Regina",
+    "areaIndex" : 11,
+    "areaDesc" : "(UTC-06:00) Саскачеван",
+    "offsetDesc" : "(UTC-06:00)"
+  },
+  {
+    "areaDescEn" : "Middletime",
+    "timeZone" : 26,
+    "timeZoneDesc" : "GMT-06:00",
+    "timeZoneId" : "America\/Chicago",
+    "areaIndex" : 12,
+    "areaDesc" : "(UTC-06:00) Центральное поясное время (США и Канада)",
+    "offsetDesc" : "(UTC-06:00)"
+  },
+  {
+    "areaDescEn" : "CentralAmerica",
+    "timeZone" : 26,
+    "timeZoneDesc" : "GMT-06:00",
+    "timeZoneId" : "America\/Belize",
+    "areaIndex" : 13,
+    "areaDesc" : "(UTC-06:00) Центральная Америка",
+    "offsetDesc" : "(UTC-06:00)"
+  },
+  {
+    "areaDescEn" : "Bogota",
+    "timeZone" : 25,
+    "timeZoneDesc" : "GMT-05:00",
+    "timeZoneId" : "America\/Bogota",
+    "areaIndex" : 14,
+    "areaDesc" : "(UTC-05:00) Богота, Лима, Кито",
+    "offsetDesc" : "(UTC-05:00)"
+  },
+  {
+    "areaDescEn" : "Easterntime",
+    "timeZone" : 25,
+    "timeZoneDesc" : "GMT-05:00",
+    "timeZoneId" : "America\/New_York",
+    "areaIndex" : 15,
+    "areaDesc" : "(UTC-05:00) Восточное время (США и Канада)",
+    "offsetDesc" : "(UTC-05:00)"
+  },
+  {
+    "areaDescEn" : "Indiana",
+    "timeZone" : 25,
+    "timeZoneDesc" : "GMT-05:00",
+    "timeZoneId" : "America\/Indiana\/Indianapolis",
+    "areaIndex" : 16,
+    "areaDesc" : "(UTC-05:00) Индиана (восток)",
+    "offsetDesc" : "(UTC-05:00)"
+  },
+  {
+    "areaDescEn" : "Caracas",
+    "timeZone" : 24,
+    "timeZoneDesc" : "GMT-04:00",
+    "timeZoneId" : "America\/Caracas",
+    "areaIndex" : 17,
+    "areaDesc" : "(UTC-04:00) Каракас",
+    "offsetDesc" : "(UTC-04:00)"
+  },
+  {
+    "areaDescEn" : "Atlantictime",
+    "timeZone" : 24,
+    "timeZoneDesc" : "GMT-04:00",
+    "timeZoneId" : "America\/Halifax",
+    "areaIndex" : 18,
+    "areaDesc" : "(UTC-04:00) Атлантическое время (Канада)",
+    "offsetDesc" : "(UTC-04:00)"
+  },
+  {
+    "areaDescEn" : "Cuiaba",
+    "timeZone" : 24,
+    "timeZoneDesc" : "GMT-04:00",
+    "timeZoneId" : "America\/Manaus",
+    "areaIndex" : 19,
+    "areaDesc" : "(UTC-04:00) Куяба",
+    "offsetDesc" : "(UTC-04:00)"
+  },
+  {
+    "areaDescEn" : "Georgetown",
+    "timeZone" : 24,
+    "timeZoneDesc" : "GMT-04:00",
+    "timeZoneId" : "America\/La_Paz",
+    "areaIndex" : 20,
+    "areaDesc" : "(UTC-04:00) Джорджтаун, Ла-Пас, Манаус, Сан-Хуан",
+    "offsetDesc" : "(UTC-04:00)"
+  },
+  {
+    "areaDescEn" : "Santiago",
+    "timeZone" : 24,
+    "timeZoneDesc" : "GMT-04:00",
+    "timeZoneId" : "America\/Santiago",
+    "areaIndex" : 21,
+    "areaDesc" : "(UTC-04:00) Сантьяго",
+    "offsetDesc" : "(UTC-04:00)"
+  },
+  {
+    "areaDescEn" : "Asuncion",
+    "timeZone" : 22,
+    "timeZoneDesc" : "GMT-03:00",
+    "timeZoneId" : "America\/Asuncion",
+    "areaIndex" : 22,
+    "areaDesc" : "(UTC-03:00) Асунсьон",
+    "offsetDesc" : "(UTC-03:00)"
+  },
+  {
+    "areaDescEn" : "Newfoundland",
+    "timeZone" : 23,
+    "timeZoneDesc" : "GMT-03:30",
+    "timeZoneId" : "America\/St_Johns",
+    "areaIndex" : 23,
+    "areaDesc" : "(UTC-03:30) Ньюфаундленд",
+    "offsetDesc" : "(UTC-03:30)"
+  },
+  {
+    "areaDescEn" : "Brasilia",
+    "timeZone" : 22,
+    "timeZoneDesc" : "GMT-03:00",
+    "timeZoneId" : "America\/Sao_Paulo",
+    "areaIndex" : 24,
+    "areaDesc" : "(UTC-03:00) Бразилиа",
+    "offsetDesc" : "(UTC-03:00)"
+  },
+  {
+    "areaDescEn" : "BuenosAires",
+    "timeZone" : 22,
+    "timeZoneDesc" : "GMT-03:00",
+    "timeZoneId" : "America\/Argentina\/Buenos_Aires",
+    "areaIndex" : 25,
+    "areaDesc" : "(UTC-03:00) Буэнос-Айрес",
+    "offsetDesc" : "(UTC-03:00)"
+  },
+  {
+    "areaDescEn" : "Greenland",
+    "timeZone" : 21,
+    "timeZoneDesc" : "GMT-02:00",
+    "timeZoneId" : "America\/Nuuk",
+    "areaIndex" : 26,
+    "areaDesc" : "(UTC-03:00) Гренландия",
+    "offsetDesc" : "(UTC-02:00)"
+  },
+  {
+    "areaDescEn" : "Cayenne",
+    "timeZone" : 22,
+    "timeZoneDesc" : "GMT-03:00",
+    "timeZoneId" : "America\/Cayenne",
+    "areaIndex" : 27,
+    "areaDesc" : "(UTC-03:00) Кайенна, Форталеза",
+    "offsetDesc" : "(UTC-03:00)"
+  },
+  {
+    "areaDescEn" : "MondVeeDya",
+    "timeZone" : 22,
+    "timeZoneDesc" : "GMT-03:00",
+    "timeZoneId" : "America\/Montevideo",
+    "areaIndex" : 28,
+    "areaDesc" : "(UTC-03:00) Монтевидео",
+    "offsetDesc" : "(UTC-03:00)"
+  },
+  {
+    "areaDescEn" : "Salvatore",
+    "timeZone" : 22,
+    "timeZoneDesc" : "GMT-03:00",
+    "timeZoneId" : "America\/El_Salvador",
+    "areaIndex" : 29,
+    "areaDesc" : "(UTC-03:00) Сальвадор",
+    "offsetDesc" : "(UTC-03:00)"
+  },
+  {
+    "areaDescEn" : "UTC-02",
+    "timeZone" : 21,
+    "timeZoneDesc" : "GMT-02:00",
+    "timeZoneId" : "Etc\/GMT+2",
+    "areaIndex" : 30,
+    "areaDesc" : "(UTC-02:00) UTC-02",
+    "offsetDesc" : "(UTC-02:00)"
+  },
+  {
+    "areaDescEn" : "CaboVerdeIslands",
+    "timeZone" : 20,
+    "timeZoneDesc" : "GMT-01:00",
+    "timeZoneId" : "Etc\/GMT+1",
+    "areaIndex" : 32,
+    "areaDesc" : "(UTC-01:00) Кабо-Верде",
+    "offsetDesc" : "(UTC-01:00)"
+  },
+  {
+    "areaDescEn" : "Azores",
+    "timeZone" : 20,
+    "timeZoneDesc" : "GMT-01:00",
+    "timeZoneId" : "Atlantic\/Azores",
+    "areaIndex" : 33,
+    "areaDesc" : "(UTC-01:00) Азорские о-ва",
+    "offsetDesc" : "(UTC-01:00)"
+  },
+  {
+    "areaDescEn" : "Dublin",
+    "timeZone" : 0,
+    "timeZoneDesc" : "GMT+00:00",
+    "timeZoneId" : "Europe\/London",
+    "areaIndex" : 34,
+    "areaDesc" : "(UTC+00:00) Дублин, Эдинбург, Лиссабон, Лондон",
+    "offsetDesc" : "(UTC+00:00)"
+  },
+  {
+    "areaDescEn" : "Casablanca",
+    "timeZone" : 0,
+    "timeZoneDesc" : "GMT+00:00",
+    "timeZoneId" : "Africa\/Casablanca",
+    "areaIndex" : 35,
+    "areaDesc" : "(UTC+01:00) Касабланка",
+    "offsetDesc" : "(UTC+00:00)"
+  },
+  {
+    "areaDescEn" : "Monrovia",
+    "timeZone" : 0,
+    "timeZoneDesc" : "GMT+00:00",
+    "timeZoneId" : "Etc\/GMT",
+    "areaIndex" : 36,
+    "areaDesc" : "(UTC+00:00) Монровия, Рейкьявик",
+    "offsetDesc" : "(UTC+00:00)"
+  },
+  {
+    "areaDescEn" : "UTC-0",
+    "timeZone" : 0,
+    "timeZoneDesc" : "GMT+00:00",
+    "timeZoneId" : "Etc\/UTC",
+    "areaIndex" : 37,
+    "areaDesc" : "(UTC+00:00) Всемирное скоординированное время",
+    "offsetDesc" : "(UTC+00:00)"
+  },
+  {
+    "areaDescEn" : "Tripoli",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Africa\/Tripoli",
+    "areaIndex" : 38,
+    "areaDesc" : "(UTC+02:00) Триполи",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "Amsterdam",
+    "timeZone" : 1,
+    "timeZoneDesc" : "GMT+01:00",
+    "timeZoneId" : "Europe\/Berlin",
+    "areaIndex" : 39,
+    "areaDesc" : "(UTC+01:00) Амстердам, Берлин, Берн, Рим, Стокгольм, Вена",
+    "offsetDesc" : "(UTC+01:00)"
+  },
+  {
+    "areaDescEn" : "Belgrade",
+    "timeZone" : 1,
+    "timeZoneDesc" : "GMT+01:00",
+    "timeZoneId" : "Europe\/Prague",
+    "areaIndex" : 40,
+    "areaDesc" : "(UTC+01:00) Белград, Братислава, Будапешт, Любляна, Прага",
+    "offsetDesc" : "(UTC+01:00)"
+  },
+  {
+    "areaDescEn" : "Brussels",
+    "timeZone" : 1,
+    "timeZoneDesc" : "GMT+01:00",
+    "timeZoneId" : "Europe\/Paris",
+    "areaIndex" : 41,
+    "areaDesc" : "(UTC+01:00) Брюссель, Копенгаген, Мадрид, Париж",
+    "offsetDesc" : "(UTC+01:00)"
+  },
+  {
+    "areaDescEn" : "Sarajevo",
+    "timeZone" : 1,
+    "timeZoneDesc" : "GMT+01:00",
+    "timeZoneId" : "Europe\/Belgrade",
+    "areaIndex" : 42,
+    "areaDesc" : "(UTC+01:00) Сараево, Скопье, Варшава, Загреб",
+    "offsetDesc" : "(UTC+01:00)"
+  },
+  {
+    "areaDescEn" : "Windhoek",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Africa\/Windhoek",
+    "areaIndex" : 43,
+    "areaDesc" : "(UTC+01:00) Виндхук",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "CentralandwesternAfrica",
+    "timeZone" : 1,
+    "timeZoneDesc" : "GMT+01:00",
+    "timeZoneId" : "Africa\/Lagos",
+    "areaIndex" : 44,
+    "areaDesc" : "(UTC+01:00) Западная и Центральная Африка",
+    "offsetDesc" : "(UTC+01:00)"
+  },
+  {
+    "areaDescEn" : "Beirut",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Asia\/Beirut",
+    "areaIndex" : 45,
+    "areaDesc" : "(UTC+02:00) Бейрут",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "Damascus",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Asia\/Damascus",
+    "areaIndex" : 46,
+    "areaDesc" : "(UTC+02:00) Дамаск",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "EasternEurope",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "EET",
+    "areaIndex" : 47,
+    "areaDesc" : "(UTC+02:00) Восточная Европа",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "Harare",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Africa\/Harare",
+    "areaIndex" : 48,
+    "areaDesc" : "(UTC+02:00) Хараре, Претория",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "Helsinki",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Europe\/Helsinki",
+    "areaIndex" : 49,
+    "areaDesc" : "(UTC+02:00) Хельсинки, Киев, Рига, София, Таллин, Вильнюс",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "Cairo",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Africa\/Cairo",
+    "areaIndex" : 50,
+    "areaDesc" : "(UTC+02:00) Каир",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "Athens",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Europe\/Athens",
+    "areaIndex" : 51,
+    "areaDesc" : "(UTC+02:00) Афины, Бухарест",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "Istanbul",
+    "timeZone" : 3,
+    "timeZoneDesc" : "GMT+03:00",
+    "timeZoneId" : "Europe\/Istanbul",
+    "areaIndex" : 52,
+    "areaDesc" : "(UTC+03:00) Стамбул",
+    "offsetDesc" : "(UTC+03:00)"
+  },
+  {
+    "areaDescEn" : "Amman",
+    "timeZone" : 3,
+    "timeZoneDesc" : "GMT+03:00",
+    "timeZoneId" : "Asia\/Amman",
+    "areaIndex" : 53,
+    "areaDesc" : "(UTC+03:00) Оман",
+    "offsetDesc" : "(UTC+03:00)"
+  },
+  {
+    "areaDescEn" : "Baghdad",
+    "timeZone" : 3,
+    "timeZoneDesc" : "GMT+03:00",
+    "timeZoneId" : "Asia\/Baghdad",
+    "areaIndex" : 54,
+    "areaDesc" : "(UTC+03:00) Багдад",
+    "offsetDesc" : "(UTC+03:00)"
+  },
+  {
+    "areaDescEn" : "Kaliningrad",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Europe\/Kaliningrad",
+    "areaIndex" : 55,
+    "areaDesc" : "(UTC+02:00) Калининград",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "Kuwait",
+    "timeZone" : 3,
+    "timeZoneDesc" : "GMT+03:00",
+    "timeZoneId" : "Asia\/Riyadh",
+    "areaIndex" : 56,
+    "areaDesc" : "(UTC+03:00) Кувейт, Эр-Рияд",
+    "offsetDesc" : "(UTC+03:00)"
+  },
+  {
+    "areaDescEn" : "Nairobi",
+    "timeZone" : 3,
+    "timeZoneDesc" : "GMT+03:00",
+    "timeZoneId" : "Africa\/Nairobi",
+    "areaIndex" : 57,
+    "areaDesc" : "(UTC+03:00) Найроби",
+    "offsetDesc" : "(UTC+03:00)"
+  },
+  {
+    "areaDescEn" : "Tehran",
+    "timeZone" : 4,
+    "timeZoneDesc" : "GMT+03:30",
+    "timeZoneId" : "Asia\/Tehran",
+    "areaIndex" : 58,
+    "areaDesc" : "(UTC+03:30) Тегеран",
+    "offsetDesc" : "(UTC+03:30)"
+  },
+  {
+    "areaDescEn" : "AbuDhabi",
+    "timeZone" : 5,
+    "timeZoneDesc" : "GMT+04:00",
+    "timeZoneId" : "Asia\/Dubai",
+    "areaIndex" : 59,
+    "areaDesc" : "(UTC+04:00) Абу-Даби, Маскат",
+    "offsetDesc" : "(UTC+04:00)"
+  },
+  {
+    "areaDescEn" : "Yerevan",
+    "timeZone" : 5,
+    "timeZoneDesc" : "GMT+04:00",
+    "timeZoneId" : "Etc\/GMT-4",
+    "areaIndex" : 60,
+    "areaDesc" : "(UTC+04:00) Ереван",
+    "offsetDesc" : "(UTC+04:00)"
+  },
+  {
+    "areaDescEn" : "Baku",
+    "timeZone" : 5,
+    "timeZoneDesc" : "GMT+04:00",
+    "timeZoneId" : "Asia\/Baku",
+    "areaIndex" : 61,
+    "areaDesc" : "(UTC+04:00) Баку",
+    "offsetDesc" : "(UTC+04:00)"
+  },
+  {
+    "areaDescEn" : "Tbilisi",
+    "timeZone" : 5,
+    "timeZoneDesc" : "GMT+04:00",
+    "timeZoneId" : "Asia\/Tbilisi",
+    "areaIndex" : 62,
+    "areaDesc" : "(UTC+04:00) Тбилиси",
+    "offsetDesc" : "(UTC+04:00)"
+  },
+  {
+    "areaDescEn" : "PortLouis",
+    "timeZone" : 5,
+    "timeZoneDesc" : "GMT+04:00",
+    "timeZoneId" : "Indian\/Mauritius",
+    "areaIndex" : 63,
+    "areaDesc" : "(UTC+04:00) Порт-Луи",
+    "offsetDesc" : "(UTC+04:00)"
+  },
+  {
+    "areaDescEn" : "Moscow",
+    "timeZone" : 3,
+    "timeZoneDesc" : "GMT+03:00",
+    "timeZoneId" : "Europe\/Moscow",
+    "areaIndex" : 64,
+    "areaDesc" : "(UTC+03:00) Москва, Санкт-Петербург, Волгоград",
+    "offsetDesc" : "(UTC+03:00)"
+  },
+  {
+    "areaDescEn" : "Kabul",
+    "timeZone" : 6,
+    "timeZoneDesc" : "GMT+04:30",
+    "timeZoneId" : "Asia\/Kabul",
+    "areaIndex" : 65,
+    "areaDesc" : "(UTC+04:30) Кабул",
+    "offsetDesc" : "(UTC+04:30)"
+  },
+  {
+    "areaDescEn" : "Ashkhabad",
+    "timeZone" : 7,
+    "timeZoneDesc" : "GMT+05:00",
+    "timeZoneId" : "Asia\/Tashkent",
+    "areaIndex" : 66,
+    "areaDesc" : "(UTC+05:00) Ашхабад, Ташкент",
+    "offsetDesc" : "(UTC+05:00)"
+  },
+  {
+    "areaDescEn" : "Chennai",
+    "timeZone" : 8,
+    "timeZoneDesc" : "GMT+05:30",
+    "timeZoneId" : "Asia\/Kolkata",
+    "areaIndex" : 67,
+    "areaDesc" : "(UTC+05:30) Ченнаи, Калькутта, Мумбай, Нью-Дели",
+    "offsetDesc" : "(UTC+05:30)"
+  },
+  {
+    "areaDescEn" : "SriJayawardenapura",
+    "timeZone" : 8,
+    "timeZoneDesc" : "GMT+05:30",
+    "timeZoneId" : "Asia\/Colombo",
+    "areaIndex" : 68,
+    "areaDesc" : "(UTC+05:30) Шри-Джаяварденепура-Котте",
+    "offsetDesc" : "(UTC+05:30)"
+  },
+  {
+    "areaDescEn" : "Kathmandu",
+    "timeZone" : 9,
+    "timeZoneDesc" : "GMT+05:45",
+    "timeZoneId" : "Asia\/Kathmandu",
+    "areaIndex" : 69,
+    "areaDesc" : "(UTC+05:45) Катманду",
+    "offsetDesc" : "(UTC+05:45)"
+  },
+  {
+    "areaDescEn" : "Astana",
+    "timeZone" : 7,
+    "timeZoneDesc" : "GMT+05:00",
+    "timeZoneId" : "Asia\/Almaty",
+    "areaIndex" : 70,
+    "areaDesc" : "(UTC+05:00) Астана",
+    "offsetDesc" : "(UTC+05:00)"
+  },
+  {
+    "areaDescEn" : "Dhaka",
+    "timeZone" : 10,
+    "timeZoneDesc" : "GMT+06:00",
+    "timeZoneId" : "Asia\/Dhaka",
+    "areaIndex" : 71,
+    "areaDesc" : "(UTC+06:00) Дакка",
+    "offsetDesc" : "(UTC+06:00)"
+  },
+  {
+    "areaDescEn" : "Ekaterinburg",
+    "timeZone" : 7,
+    "timeZoneDesc" : "GMT+05:00",
+    "timeZoneId" : "Asia\/Yekaterinburg",
+    "areaIndex" : 72,
+    "areaDesc" : "(UTC+05:00) Екатеринбург",
+    "offsetDesc" : "(UTC+05:00)"
+  },
+  {
+    "areaDescEn" : "Yangon",
+    "timeZone" : 11,
+    "timeZoneDesc" : "GMT+06:30",
+    "timeZoneId" : "Asia\/Yangon",
+    "areaIndex" : 73,
+    "areaDesc" : "(UTC+06:30) Янгон",
+    "offsetDesc" : "(UTC+06:30)"
+  },
+  {
+    "areaDescEn" : "Bangkok",
+    "timeZone" : 12,
+    "timeZoneDesc" : "GMT+07:00",
+    "timeZoneId" : "Asia\/Bangkok",
+    "areaIndex" : 74,
+    "areaDesc" : "(UTC+07:00) Бангкок, Ханой, Джакарта",
+    "offsetDesc" : "(UTC+07:00)"
+  },
+  {
+    "areaDescEn" : "Novosibirsk",
+    "timeZone" : 12,
+    "timeZoneDesc" : "GMT+07:00",
+    "timeZoneId" : "Asia\/Novosibirsk",
+    "areaIndex" : 75,
+    "areaDesc" : "(UTC+07:00) Новосибирск",
+    "offsetDesc" : "(UTC+07:00)"
+  },
+  {
+    "areaDescEn" : "Beijing",
+    "timeZone" : 13,
+    "timeZoneDesc" : "GMT+08:00",
+    "timeZoneId" : "Asia\/Shanghai",
+    "areaIndex" : 76,
+    "areaDesc" : "(UTC+08:00) Пекин, Чунцин, Гонконг, Урумчи",
+    "offsetDesc" : "(UTC+08:00)"
+  },
+  {
+    "areaDescEn" : "KualaLumpur",
+    "timeZone" : 13,
+    "timeZoneDesc" : "GMT+08:00",
+    "timeZoneId" : "Asia\/Singapore",
+    "areaIndex" : 77,
+    "areaDesc" : "(UTC+08:00) Куала-Лумпур, Сингапур",
+    "offsetDesc" : "(UTC+08:00)"
+  },
+  {
+    "areaDescEn" : "Krasnoyarsk",
+    "timeZone" : 12,
+    "timeZoneDesc" : "GMT+07:00",
+    "timeZoneId" : "Asia\/Krasnoyarsk",
+    "areaIndex" : 78,
+    "areaDesc" : "(UTC+07:00) Красноярск",
+    "offsetDesc" : "(UTC+07:00)"
+  },
+  {
+    "areaDescEn" : "Perth",
+    "timeZone" : 13,
+    "timeZoneDesc" : "GMT+08:00",
+    "timeZoneId" : "Australia\/Perth",
+    "areaIndex" : 79,
+    "areaDesc" : "(UTC+08:00) Перт",
+    "offsetDesc" : "(UTC+08:00)"
+  },
+  {
+    "areaDescEn" : "Taipei",
+    "timeZone" : 13,
+    "timeZoneDesc" : "GMT+08:00",
+    "timeZoneId" : "Asia\/Taipei",
+    "areaIndex" : 80,
+    "areaDesc" : "(UTC+08:00) Тайбэй",
+    "offsetDesc" : "(UTC+08:00)"
+  },
+  {
+    "areaDescEn" : "Ulaanbaatar",
+    "timeZone" : 13,
+    "timeZoneDesc" : "GMT+08:00",
+    "timeZoneId" : "Asia\/Ulaanbaatar",
+    "areaIndex" : 81,
+    "areaDesc" : "(UTC+08:00) Улан-Батор",
+    "offsetDesc" : "(UTC+08:00)"
+  },
+  {
+    "areaDescEn" : "Osaka",
+    "timeZone" : 14,
+    "timeZoneDesc" : "GMT+09:00",
+    "timeZoneId" : "Asia\/Tokyo",
+    "areaIndex" : 82,
+    "areaDesc" : "(UTC+09:00) Осака, Саппоро, Токио",
+    "offsetDesc" : "(UTC+09:00)"
+  },
+  {
+    "areaDescEn" : "Seoul",
+    "timeZone" : 14,
+    "timeZoneDesc" : "GMT+09:00",
+    "timeZoneId" : "Asia\/Seoul",
+    "areaIndex" : 83,
+    "areaDesc" : "(UTC+09:00) Сеул",
+    "offsetDesc" : "(UTC+09:00)"
+  },
+  {
+    "areaDescEn" : "Irkutsk",
+    "timeZone" : 13,
+    "timeZoneDesc" : "GMT+08:00",
+    "timeZoneId" : "Asia\/Irkutsk",
+    "areaIndex" : 84,
+    "areaDesc" : "(UTC+08:00) Иркутск",
+    "offsetDesc" : "(UTC+08:00)"
+  },
+  {
+    "areaDescEn" : "Adelaide",
+    "timeZone" : 15,
+    "timeZoneDesc" : "GMT+09:30",
+    "timeZoneId" : "Australia\/Adelaide",
+    "areaIndex" : 85,
+    "areaDesc" : "(UTC+09:30) Аделаида",
+    "offsetDesc" : "(UTC+09:30)"
+  },
+  {
+    "areaDescEn" : "Darwin",
+    "timeZone" : 15,
+    "timeZoneDesc" : "GMT+09:30",
+    "timeZoneId" : "Australia\/Darwin",
+    "areaIndex" : 86,
+    "areaDesc" : "(UTC+09:30) Дарвин",
+    "offsetDesc" : "(UTC+09:30)"
+  },
+  {
+    "areaDescEn" : "Brisbane",
+    "timeZone" : 16,
+    "timeZoneDesc" : "GMT+10:00",
+    "timeZoneId" : "Australia\/Brisbane",
+    "areaIndex" : 87,
+    "areaDesc" : "(UTC+10:00) Брисбен",
+    "offsetDesc" : "(UTC+10:00)"
+  },
+  {
+    "areaDescEn" : "Guam",
+    "timeZone" : 16,
+    "timeZoneDesc" : "GMT+10:00",
+    "timeZoneId" : "Pacific\/Guam",
+    "areaIndex" : 88,
+    "areaDesc" : "(UTC+10:00) Гуам, Порт-Морсби",
+    "offsetDesc" : "(UTC+10:00)"
+  },
+  {
+    "areaDescEn" : "Hobart",
+    "timeZone" : 16,
+    "timeZoneDesc" : "GMT+10:00",
+    "timeZoneId" : "Australia\/Hobart",
+    "areaIndex" : 89,
+    "areaDesc" : "(UTC+10:00) Хобарт",
+    "offsetDesc" : "(UTC+10:00)"
+  },
+  {
+    "areaDescEn" : "Canberra",
+    "timeZone" : 16,
+    "timeZoneDesc" : "GMT+10:00",
+    "timeZoneId" : "Australia\/Sydney",
+    "areaIndex" : 90,
+    "areaDesc" : "(UTC+10:00) Канберра, Мельбурн, Сидней",
+    "offsetDesc" : "(UTC+10:00)"
+  },
+  {
+    "areaDescEn" : "Yakutsk",
+    "timeZone" : 14,
+    "timeZoneDesc" : "GMT+09:00",
+    "timeZoneId" : "Asia\/Yakutsk",
+    "areaIndex" : 91,
+    "areaDesc" : "(UTC+09:00) Якутск",
+    "offsetDesc" : "(UTC+09:00)"
+  },
+  {
+    "areaDescEn" : "Vladivostok",
+    "timeZone" : 16,
+    "timeZoneDesc" : "GMT+10:00",
+    "timeZoneId" : "Asia\/Vladivostok",
+    "areaIndex" : 92,
+    "areaDesc" : "(UTC+11:00) Владивосток",
+    "offsetDesc" : "(UTC+10:00)"
+  },
+  {
+    "areaDescEn" : "SolomonIslands",
+    "timeZone" : 17,
+    "timeZoneDesc" : "GMT+11:00",
+    "timeZoneId" : "Pacific\/Guadalcanal",
+    "areaIndex" : 93,
+    "areaDesc" : "(UTC+11:00) Соломоновы острова, Новая Каледония",
+    "offsetDesc" : "(UTC+11:00)"
+  },
+  {
+    "areaDescEn" : "Auckland",
+    "timeZone" : 18,
+    "timeZoneDesc" : "GMT+12:00",
+    "timeZoneId" : "Pacific\/Auckland",
+    "areaIndex" : 94,
+    "areaDesc" : "(UTC+12:00) Окленд, Веллингтон",
+    "offsetDesc" : "(UTC+12:00)"
+  },
+  {
+    "areaDescEn" : "Fiji",
+    "timeZone" : 18,
+    "timeZoneDesc" : "GMT+12:00",
+    "timeZoneId" : "Pacific\/Fiji",
+    "areaIndex" : 95,
+    "areaDesc" : "(UTC+12:00) Фиджи",
+    "offsetDesc" : "(UTC+12:00)"
+  },
+  {
+    "areaDescEn" : "Magadan",
+    "timeZone" : 17,
+    "timeZoneDesc" : "GMT+11:00",
+    "timeZoneId" : "Asia\/Magadan",
+    "areaIndex" : 96,
+    "areaDesc" : "(UTC+11:00) Магадан",
+    "offsetDesc" : "(UTC+11:00)"
+  },
+  {
+    "areaDescEn" : "UTC+12",
+    "timeZone" : 18,
+    "timeZoneDesc" : "GMT+12:00",
+    "timeZoneId" : "Etc\/GMT-12",
+    "areaIndex" : 97,
+    "areaDesc" : "(UTC+12:00) UTC+12",
+    "offsetDesc" : "(UTC+12:00)"
+  },
+  {
+    "areaDescEn" : "Nukualofa",
+    "timeZone" : 19,
+    "timeZoneDesc" : "GMT+13:00",
+    "timeZoneId" : "Pacific\/Tongatapu",
+    "areaIndex" : 98,
+    "areaDesc" : "(UTC+13:00) Нукуалофа",
+    "offsetDesc" : "(UTC+13:00)"
+  },
+  {
+    "areaDescEn" : "Samoa",
+    "timeZone" : 19,
+    "timeZoneDesc" : "GMT+13:00",
+    "timeZoneId" : "Pacific\/Apia",
+    "areaIndex" : 99,
+    "areaDesc" : "(UTC+13:00) Самоа",
+    "offsetDesc" : "(UTC+13:00)"
+  },
+  {
+    "areaDescEn" : "AleutianIslands",
+    "timeZone" : 30,
+    "timeZoneDesc" : "GMT-10:00",
+    "timeZoneId" : "America\/Adak",
+    "areaIndex" : 100,
+    "areaDesc" : "(UTC-10:00) Алеутские о-ва",
+    "offsetDesc" : "(UTC-10:00)"
+  },
+  {
+    "areaDescEn" : "MarquesasIslands",
+    "timeZone" : 36,
+    "timeZoneDesc" : "GMT-09:30",
+    "timeZoneId" : "Pacific\/Marquesas",
+    "areaIndex" : 101,
+    "areaDesc" : "(UTC-09:30) Маркизские о-ва",
+    "offsetDesc" : "(UTC-09:30)"
+  },
+  {
+    "areaDescEn" : "UTC-09",
+    "timeZone" : 29,
+    "timeZoneDesc" : "GMT-09:00",
+    "timeZoneId" : "Etc\/GMT+9",
+    "areaIndex" : 102,
+    "areaDesc" : "(UTC-09:00) Всемирное скоординированное время -09",
+    "offsetDesc" : "(UTC-09:00)"
+  },
+  {
+    "areaDescEn" : "UTC-08",
+    "timeZone" : 28,
+    "timeZoneDesc" : "GMT-08:00",
+    "timeZoneId" : "Etc\/GMT+8",
+    "areaIndex" : 103,
+    "areaDesc" : "(UTC-08:00) Всемирное скоординированное время -08",
+    "offsetDesc" : "(UTC-08:00)"
+  },
+  {
+    "areaDescEn" : "EasterIsland",
+    "timeZone" : 26,
+    "timeZoneDesc" : "GMT-06:00",
+    "timeZoneId" : "Pacific\/Easter",
+    "areaIndex" : 104,
+    "areaDesc" : "(UTC-06:00) о-в Пасхи",
+    "offsetDesc" : "(UTC-06:00)"
+  },
+  {
+    "areaDescEn" : "Haiti",
+    "timeZone" : 25,
+    "timeZoneDesc" : "GMT-05:00",
+    "timeZoneId" : "America\/Port-au-Prince",
+    "areaIndex" : 106,
+    "areaDesc" : "(UTC-05:00) Гаити",
+    "offsetDesc" : "(UTC-05:00)"
+  },
+  {
+    "areaDescEn" : "Havana",
+    "timeZone" : 25,
+    "timeZoneDesc" : "GMT-05:00",
+    "timeZoneId" : "America\/Havana",
+    "areaIndex" : 107,
+    "areaDesc" : "(UTC-05:00) Гавана",
+    "offsetDesc" : "(UTC-05:00)"
+  },
+  {
+    "areaDescEn" : "Turks",
+    "timeZone" : 25,
+    "timeZoneDesc" : "GMT-05:00",
+    "timeZoneId" : "America\/Grand_Turk",
+    "areaIndex" : 108,
+    "areaDesc" : "(UTC-05:00) Теркс и Кайкос",
+    "offsetDesc" : "(UTC-05:00)"
+  },
+  {
+    "areaDescEn" : "Araguaina",
+    "timeZone" : 22,
+    "timeZoneDesc" : "GMT-03:00",
+    "timeZoneId" : "America\/Araguaina",
+    "areaIndex" : 109,
+    "areaDesc" : "(UTC-03:00) Арагуаяна",
+    "offsetDesc" : "(UTC-03:00)"
+  },
+  {
+    "areaDescEn" : "SaintPierre",
+    "timeZone" : 22,
+    "timeZoneDesc" : "GMT-03:00",
+    "timeZoneId" : "America\/Miquelon",
+    "areaIndex" : 110,
+    "areaDesc" : "(UTC-03:00) Сен-Пьер и Микелон",
+    "offsetDesc" : "(UTC-03:00)"
+  },
+  {
+    "areaDescEn" : "Chisinau",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Europe\/Chisinau",
+    "areaIndex" : 112,
+    "areaDesc" : "(UTC+02:00) Кишинев",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "Gaza",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Asia\/Gaza",
+    "areaIndex" : 113,
+    "areaDesc" : "(UTC+02:00) Газа, Хеврон",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "Jerusalem",
+    "timeZone" : 2,
+    "timeZoneDesc" : "GMT+02:00",
+    "timeZoneId" : "Asia\/Jerusalem",
+    "areaIndex" : 114,
+    "areaDesc" : "(UTC+02:00) Иерусалим",
+    "offsetDesc" : "(UTC+02:00)"
+  },
+  {
+    "areaDescEn" : "Minsk",
+    "timeZone" : 3,
+    "timeZoneDesc" : "GMT+03:00",
+    "timeZoneId" : "Europe\/Minsk",
+    "areaIndex" : 116,
+    "areaDesc" : "(UTC+03:00) Минск",
+    "offsetDesc" : "(UTC+03:00)"
+  },
+  {
+    "areaDescEn" : "Astrakhan",
+    "timeZone" : 5,
+    "timeZoneDesc" : "GMT+04:00",
+    "timeZoneId" : "Europe\/Astrakhan",
+    "areaIndex" : 117,
+    "areaDesc" : "(UTC+04:00) Астрахань, Ульяновск",
+    "offsetDesc" : "(UTC+04:00)"
+  },
+  {
+    "areaDescEn" : "Izhevsk",
+    "timeZone" : 5,
+    "timeZoneDesc" : "GMT+04:00",
+    "timeZoneId" : "Europe\/Samara",
+    "areaIndex" : 118,
+    "areaDesc" : "(UTC+04:00) Ижевск, Самара",
+    "offsetDesc" : "(UTC+04:00)"
+  },
+  {
+    "areaDescEn" : "Saratov",
+    "timeZone" : 5,
+    "timeZoneDesc" : "GMT+04:00",
+    "timeZoneId" : "Europe\/Saratov",
+    "areaIndex" : 119,
+    "areaDesc" : "(UTC+04:00) Саратов",
+    "offsetDesc" : "(UTC+04:00)"
+  },
+  {
+    "areaDescEn" : "Islamabad",
+    "timeZone" : 7,
+    "timeZoneDesc" : "GMT+05:00",
+    "timeZoneId" : "Asia\/Karachi",
+    "areaIndex" : 120,
+    "areaDesc" : "(UTC+05:00) Исламабад, Карачи",
+    "offsetDesc" : "(UTC+05:00)"
+  },
+  {
+    "areaDescEn" : "Omsk",
+    "timeZone" : 10,
+    "timeZoneDesc" : "GMT+06:00",
+    "timeZoneId" : "Asia\/Omsk",
+    "areaIndex" : 122,
+    "areaDesc" : "(UTC+06:00) Омск",
+    "offsetDesc" : "(UTC+06:00)"
+  },
+  {
+    "areaDescEn" : "Barnaul",
+    "timeZone" : 12,
+    "timeZoneDesc" : "GMT+07:00",
+    "timeZoneId" : "Asia\/Barnaul",
+    "areaIndex" : 123,
+    "areaDesc" : "(UTC+07:00) Барнаул, Горно-Алтайск",
+    "offsetDesc" : "(UTC+07:00)"
+  },
+  {
+    "areaDescEn" : "Hovd",
+    "timeZone" : 12,
+    "timeZoneDesc" : "GMT+07:00",
+    "timeZoneId" : "Asia\/Hovd",
+    "areaIndex" : 124,
+    "areaDesc" : "(UTC+07:00) Ховд",
+    "offsetDesc" : "(UTC+07:00)"
+  },
+  {
+    "areaDescEn" : "Tomsk",
+    "timeZone" : 12,
+    "timeZoneDesc" : "GMT+07:00",
+    "timeZoneId" : "Asia\/Tomsk",
+    "areaIndex" : 125,
+    "areaDesc" : "(UTC+07:00) Томск",
+    "offsetDesc" : "(UTC+07:00)"
+  },
+  {
+    "areaDescEn" : "Eucla",
+    "timeZone" : 38,
+    "timeZoneDesc" : "GMT+08:45",
+    "timeZoneId" : "Australia\/Eucla",
+    "areaIndex" : 127,
+    "areaDesc" : "(UTC+08:45) Юкла",
+    "offsetDesc" : "(UTC+08:45)"
+  },
+  {
+    "areaDescEn" : "Chita",
+    "timeZone" : 14,
+    "timeZoneDesc" : "GMT+09:00",
+    "timeZoneId" : "Asia\/Chita",
+    "areaIndex" : 128,
+    "areaDesc" : "(UTC+09:00) Чита",
+    "offsetDesc" : "(UTC+09:00)"
+  },
+  {
+    "areaDescEn" : "LordHoweIsland",
+    "timeZone" : 34,
+    "timeZoneDesc" : "GMT+10:30",
+    "timeZoneId" : "Australia\/Lord_Howe",
+    "areaIndex" : 129,
+    "areaDesc" : "(UTC+10:30) о-в Лорд-Хау",
+    "offsetDesc" : "(UTC+10:30)"
+  },
+  {
+    "areaDescEn" : "BougainvilleIsland",
+    "timeZone" : 17,
+    "timeZoneDesc" : "GMT+11:00",
+    "timeZoneId" : "Pacific\/Bougainville",
+    "areaIndex" : 130,
+    "areaDesc" : "(UTC+11:00) о-в Бугенвиль",
+    "offsetDesc" : "(UTC+11:00)"
+  },
+  {
+    "areaDescEn" : "NorfolkIsland",
+    "timeZone" : 17,
+    "timeZoneDesc" : "GMT+11:00",
+    "timeZoneId" : "Pacific\/Norfolk",
+    "areaIndex" : 132,
+    "areaDesc" : "(UTC+11:00) о-в Норфолк",
+    "offsetDesc" : "(UTC+11:00)"
+  },
+  {
+    "areaDescEn" : "Sakhalin",
+    "timeZone" : 17,
+    "timeZoneDesc" : "GMT+11:00",
+    "timeZoneId" : "Asia\/Sakhalin",
+    "areaIndex" : 133,
+    "areaDesc" : "(UTC+11:00) Сахалин",
+    "offsetDesc" : "(UTC+11:00)"
+  },
+  {
+    "areaDescEn" : "Anadyr",
+    "timeZone" : 18,
+    "timeZoneDesc" : "GMT+12:00",
+    "timeZoneId" : "Asia\/Anadyr",
+    "areaIndex" : 134,
+    "areaDesc" : "(UTC+12:00) Анадырь, Петропавловск-Камчатский",
+    "offsetDesc" : "(UTC+12:00)"
+  },
+  {
+    "areaDescEn" : "ChathamIslands",
+    "timeZone" : 39,
+    "timeZoneDesc" : "GMT+12:45",
+    "timeZoneId" : "Pacific\/Chatham",
+    "areaIndex" : 135,
+    "areaDesc" : "(UTC+12:45) о-ва Чатем",
+    "offsetDesc" : "(UTC+12:45)"
+  },
+  {
+    "areaDescEn" : "UTC+13",
+    "timeZone" : 19,
+    "timeZoneDesc" : "GMT+13:00",
+    "timeZoneId" : "Etc\/GMT-13",
+    "areaIndex" : 136,
+    "areaDesc" : "(UTC+13:00) Всемирное скоординированное время +13",
+    "offsetDesc" : "(UTC+13:00)"
+  },
+  {
+    "areaDescEn" : "KiritimatiIsland",
+    "timeZone" : 35,
+    "timeZoneDesc" : "GMT+14:00",
+    "timeZoneId" : "Etc\/GMT-14",
+    "areaIndex" : 137,
+    "areaDesc" : "(UTC+14:00) о-в Киритимати",
+    "offsetDesc" : "(UTC+14:00)"
+  },
+  {
+    "areaDescEn" : "SaoTome",
+    "timeZone" : 0,
+    "timeZoneDesc" : "GMT+00:00",
+    "timeZoneId" : "Africa\/Sao_Tome",
+    "areaIndex" : 138,
+    "areaDesc" : "(UTC+00:00) Сан-Томе",
+    "offsetDesc" : "(UTC+00:00)"
+  },
+  {
+    "areaDescEn" : "Bishkek",
+    "timeZone" : 10,
+    "timeZoneDesc" : "GMT+06:00",
+    "timeZoneId" : "Asia\/Bishkek",
+    "areaIndex" : 139,
+    "areaDesc" : "(UTC+06:00) Бишкек",
+    "offsetDesc" : "(UTC+06:00)"
+  }
+]
